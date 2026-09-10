@@ -11,20 +11,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@Table(name = "borrow_details")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "book_copies")
-public class BookCopy {
+public class BorrowDetail {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	@NotBlank(message = "code không được để trống")
-	private String code;
 
 	@NotBlank(message = "status không được để trống")
 	private String status;
