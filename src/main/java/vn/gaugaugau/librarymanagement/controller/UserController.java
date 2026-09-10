@@ -23,8 +23,8 @@ public class UserController {
 
 	@PostMapping("/users")
 	public ResponseEntity<ApiResponse<User>> createUser(@Valid @RequestBody User user) {
-		User userController = this.userService.handleCreateUser(user);
-		return ApiResponse.created(userController);
+		User newUser = this.userService.handleCreateUser(user);
+		return ApiResponse.created(newUser);
 	}
 
 	@GetMapping("/users")
